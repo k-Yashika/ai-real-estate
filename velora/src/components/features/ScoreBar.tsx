@@ -5,7 +5,7 @@ type ScoreBarProps = {
 
 export default function ScoreBar({ label, score }: ScoreBarProps) {
   const barColor =
-    score >= 75 ? "bg-cyan-400" : score >= 50 ? "bg-violet-400" : "bg-red-400";
+    score >= 75 ? "bg-teal-700" : score >= 50 ? "bg-amber-500" : "bg-red-400";
 
   return (
     <div className="mb-5">

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type TagProps = {
   children: ReactNode;
@@ -8,7 +8,7 @@ type TagProps = {
 export default function Tag({ children, className = "" }: TagProps) {
   return (
     <span
-      className={`inline-block whitespace-nowrap rounded-full bg-teal-50 px-[10px] py-[3px] text-xs font-medium text-teal-700 ${className}`}
+      className={`inline-block whitespace-nowrap rounded-full px-[10px] py-[3px] text-xs font-medium ${className}`}
     >
       {children}
     </span>

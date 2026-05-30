@@ -44,51 +44,50 @@ const Home = ({ setPage }: HomeProps) => {
           </div>
         </div>
 
-        <div className="rounded-[28px] border border-teal-200 bg-white p-6 shadow-xl shadow-teal-900/10">
-          <div className="rounded-[22px] bg-teal-50 p-7">
-            <div className="mb-6 flex items-start justify-between">
-              <div>
-                <p className="mb-1 text-xs text-slate-500">
-                  Overall apartment score
-                </p>
+        {/* Score Card */}
+        <div className="rounded-[24px] border border-teal-200 bg-teal-50 p-9">
+          <div className="mb-6 flex items-start justify-between">
+            <div>
+              <p className="mb-2 text-base text-slate-600">
+                Overall apartment score
+              </p>
 
-                <div className="flex items-end gap-3">
-                  <span className="text-[56px] font-semibold leading-none tracking-[-1.5px] text-teal-600">
-                    87
-                  </span>
-                  <Tag className="mb-2">Great find</Tag>
-                </div>
+              <div className="flex items-center gap-3">
+                <span className="text-[60px] font-semibold leading-none text-teal-600">
+                  87
+                </span>
+                <Tag className="bg-teal-100 text-teal-700">Great find</Tag>
               </div>
-
-              <Tag className="bg-amber-100 text-amber-700">Fair value</Tag>
             </div>
 
-            {[
-              ["Lighting", 90],
-              ["Space efficiency", 82],
-              ["Storage", 65],
-              ["Layout", 85],
-            ].map(([label, score]) => (
-              <ScoreBar
-                key={label}
-                label={label as string}
-                score={score as number}
-              />
-            ))}
+            <Tag className="bg-amber-100 text-amber-700">Fair value</Tag>
+          </div>
 
-            <div className="mt-5 border-t border-teal-200 pt-4">
-              <p className="mb-3 text-xs text-slate-500">Detected issues</p>
+          {[
+            ["Lighting", 90],
+            ["Space efficiency", 65],
+            ["Storage", 35],
+            ["Layout", 75],
+          ].map(([label, score]) => (
+            <ScoreBar
+              key={label}
+              label={label as string}
+              score={score as number}
+            />
+          ))}
 
-              <div className="flex flex-wrap gap-2">
-                {["Limited storage", "Street noise risk"].map((issue) => (
-                  <span
-                    key={issue}
-                    className="rounded-lg bg-red-50 px-3 py-1 text-[11px] font-medium text-red-600"
-                  >
-                    {issue}
-                  </span>
-                ))}
-              </div>
+          <div className="mt-5 border-t border-teal-200 pt-5">
+            <p className="mb-3 text-sm text-slate-600">Detected issues</p>
+
+            <div className="flex flex-wrap gap-2">
+              {["Limited storage", "Street noise risk"].map((issue) => (
+                <span
+                  key={issue}
+                  className="rounded-lg bg-red-50 px-3 py-1.5 text-sm text-red-600"
+                >
+                  {issue}
+                </span>
+              ))}
             </div>
           </div>
         </div>
